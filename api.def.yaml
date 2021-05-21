@@ -1,0 +1,24 @@
+openapi: "3.0.0"
+info:
+  title: Minimum example of bug in oapi-codegen
+  version: "1.0.0"
+servers:
+  - url: http://localhost:4000/api/v1/
+paths:
+  /people:
+    get:
+      operationId: getPeopleBornOnDay
+      parameters:
+        - in: query
+          name: day
+          schema:
+            type: string
+            format: date
+          required: true
+      responses:
+        '200':
+          description: todo
+          content:
+            text/plain:
+              schema:
+                type: string
